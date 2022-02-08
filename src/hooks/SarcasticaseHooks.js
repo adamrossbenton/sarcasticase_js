@@ -1,7 +1,8 @@
-import React from "react"
+import {useState} from "react"
 
 function SarcasticaseHooks() {
 
+    // Convert to sArCaSTiCasE
     const sarcasticase = str => {
         let newStr = ""
         let numCaps = 0
@@ -20,8 +21,19 @@ function SarcasticaseHooks() {
         return newStr
     }
 
+    // Form hooks
+    const [text, setText] = useState("")
+
+    const handleChange = e => {
+        setText({...text,
+            [e.target.name]: e.target.value
+        })
+    }
+
 return {
-    sarcasticase
+    sarcasticase,
+    text,
+    handleChange
 }
 
 }

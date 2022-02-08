@@ -14,13 +14,15 @@ import SarcasticaseHooks from "./hooks/SarcasticaseHooks"
 
 function App() {
   
-  const {sarcasticase} = SarcasticaseHooks()
+  const {sarcasticase, text, handleChange} = SarcasticaseHooks()
 
   return (
     <div className="App">
       <Header />
       <Main 
         sarcasticase={sarcasticase}
+        text={text}
+        handleChange={handleChange}
       />
       <Footer />
     </div>
